@@ -13,6 +13,10 @@ namespace Logic
     public class ArrayExtension
     {
 
+        /// <summary>
+        /// The wrapping method for QuickSort.
+        /// </summary>
+        /// <param name="arr"></param>
         public static void QuickSortWrapper(int[] arr)
         {
             if (arr == null)
@@ -28,7 +32,7 @@ namespace Logic
         /// <param name="arr">The array needed to be sorted</param>
         /// <param name="first">The first element of sub-array</param>
         /// <param name="last">>The last element of sub-array</param>
-        public static void QuickSort(int[] arr, int first, int last)
+        private static void QuickSort(int[] arr, int first, int last)
         {
             if (arr == null)
                 throw new ArgumentNullException();
@@ -52,6 +56,10 @@ namespace Logic
             }
         }
 
+        /// <summary>
+        /// The wrapping method for MergeSort.
+        /// </summary>
+        /// <param name="arr"></param>
         public static void MergeSortWrapper(int[] arr)
         {
             if (arr == null)
@@ -66,7 +74,7 @@ namespace Logic
         /// <param name="array">The array needed to be sorted</param>
         /// <param name="first">The first element of sub-array</param>
         /// <param name="last">The last element of sub-array</param>
-        public static void MergeSort(int[] array, int left, int right)
+        private static void MergeSort(int[] array, int left, int right)
         {
             if (left < right)
             {
