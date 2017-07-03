@@ -61,12 +61,12 @@ namespace ConsoleUI
             PrintArray(arr);
             Console.WriteLine();
             Console.WriteLine("Sorted array (Quick Sort): ");
-            QuickSort(arr, 0, arr.Length - 1);
+            QuickSortWrapper(arr);
             PrintArray(arr);
             Console.WriteLine();
             Console.WriteLine("Sorted array (Merge Sort): ");
             //int[] arr1 = CreateArray(n);
-            MergeSort(arr1, 0, arr1.Length - 1);
+            MergeSortWrapper(arr1);
             PrintArray(arr1);
 
         }

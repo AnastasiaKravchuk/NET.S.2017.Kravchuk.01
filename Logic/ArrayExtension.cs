@@ -12,6 +12,16 @@ namespace Logic
     /// </summary>
     public class ArrayExtension
     {
+
+        public static void QuickSortWrapper(int[] arr)
+        {
+            if (arr == null)
+            {
+                throw new ArgumentNullException();
+            }
+            QuickSort(arr, 0, arr.Length - 1);
+        }
+
         /// <summary>
         /// Main method to sort the array using QuickSort algorithm
         /// </summary>
@@ -20,6 +30,9 @@ namespace Logic
         /// <param name="last">>The last element of sub-array</param>
         public static void QuickSort(int[] arr, int first, int last)
         {
+            if (arr == null)
+                throw new ArgumentNullException();
+
             int pivot = arr[(last + first) / 2];
             int i = first;
             int j = last;
@@ -37,6 +50,14 @@ namespace Logic
             {
                 QuickSort(arr, first, j);
             }
+        }
+
+        public static void MergeSortWrapper(int[] arr)
+        {
+            if (arr == null)
+                throw new ArgumentNullException();
+
+            MergeSort(arr, 0, arr.Length - 1);
         }
 
         /// <summary>
