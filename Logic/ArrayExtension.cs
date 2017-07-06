@@ -12,6 +12,37 @@ namespace Logic
     /// </summary>
     public class ArrayExtension
     {
+        /// <summary>
+        /// Method find an index of the number, which separates 
+        /// array in two equal parts (in sum of elements)
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <returns></returns>
+        public static int FindIndexOfEqualSum(int[] arr)
+        {
+            if (arr == null)
+            {
+                throw new ArgumentNullException();
+            }
+            int n = arr.Length;
+            if (n > 1000)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+            int i; int sumLeft = 0; int sumRight = 0;
+            int sumTotal = arr.Sum();
+            for (i = 0; i < n - 1; i++)
+            {
+                sumLeft += arr[i];
+                sumRight = sumTotal - sumLeft - arr[i + 1];
+
+                if (sumLeft == sumRight)
+                {
+                    return i + 1;
+                }
+            }
+            return -1;
+        }
 
         /// <summary>
         /// The wrapping method for QuickSort.

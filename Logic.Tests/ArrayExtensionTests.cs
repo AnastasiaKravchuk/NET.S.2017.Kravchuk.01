@@ -96,5 +96,63 @@ namespace Logic.Tests
 
             MergeSortWrapper(arr);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void FindIndexOfEqualSum_NullArray_ReturnedException()
+        {
+            int[] arr = null;
+
+            FindIndexOfEqualSum(arr);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void FindIndexOfEqualSum_OutOfRange_ReturnedException()
+        {
+            int[] arr = new int[10000];
+
+            FindIndexOfEqualSum(arr);
+        }
+
+        [TestMethod]
+        public void FindIndexOfEqualSum_FirstArray_ReturnedTrue()
+        {
+            int[] arr = new int[] {1, 2, 3, 4, 3, 2, 1};
+            int expected = 3;
+            int result = FindIndexOfEqualSum(arr);
+
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void FindIndexOfEqualSum_SecondArray_ReturnedTrue()
+        {
+            int[] arr = new int[] { 1, 100, 50, -51, 1, 1 };
+            int expected = 1;
+            int result = FindIndexOfEqualSum(arr);
+
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void FindIndexOfEqualSum_ThirdArray_ReturnedTrue()
+        {
+            int[] arr = new int[] { -4, 6, 0, 0, 5, 7, -10 };
+            int expected = 2;
+            int result = FindIndexOfEqualSum(arr);
+
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void FindIndexOfEqualSum_NoIndexFound_ReturnedTrue()
+        {
+            int[] arr = new int[] { 1, 2, 3, 4, 5, 6 };
+            int expected = -1;
+            int result = FindIndexOfEqualSum(arr);
+
+            Assert.AreEqual(expected, result);
+        }
     }
 }
